@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 // Created custom logo
 import logo from '/logo.svg'
 import { CartWidget } from '../CartWidget'
-import { CartProps } from '../Products/Products.tsx'
+import { CartProps } from '../Products/Items.tsx'
 import useLocalStorageState from 'use-local-storage-state'
 
 
@@ -21,7 +21,7 @@ export const Header: FunctionComponent = () => {
     }, [])
   
     const updateHeader = () => {
-      const DISTANCE_FROM_TOP = 125
+      const DISTANCE_FROM_TOP = 100
       const headerElement = document.querySelector("header") as HTMLElement
       const logoElement = document.querySelectorAll("img")[0] as HTMLElement
       const cartWidgetElement = document.querySelectorAll("img")[1] as HTMLElement
@@ -32,14 +32,14 @@ export const Header: FunctionComponent = () => {
         headerElement.style.transition = "height 150ms ease-in"
         headerElement.style.height = "50px"
         logoElement.style.transition = "height 150ms ease-in"
-        logoElement.style.height = "4rem"
+        logoElement.style.height = "20rem"
         cartWidgetElement.style.transition = "height 150ms ease-in"
         cartWidgetElement.style.height = "1.5rem"
         productsCountElement.style.transition = "font-size 150ms ease-in"
         productsCountElement.style.fontSize = "1.5em"
       } else {
         headerElement.style.height = "125px"
-        logoElement.style.height = "5rem"
+        logoElement.style.height = "10rem"
         cartWidgetElement.style.height = "2rem"
         productsCountElement.style.fontSize = "1.5em"
       }

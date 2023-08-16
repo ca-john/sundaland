@@ -1,19 +1,21 @@
 .header {
+  
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: #8c00c0;
+    background-color: #9f9f9f;
     transition: height 0.3s ease;
     position: fixed;
     right: 0;
     left: 0;
     top: 0;
-    opacity: 0.85;
+    opacity: 1;
     backdrop-filter: saturate(150%) blur(15px);
     justify-content: space-between;
     z-index: 1;
   
     .logo {
+      
       height:5em;
       padding: 1em;
       will-change: filter;

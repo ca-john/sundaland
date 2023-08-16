@@ -1,12 +1,14 @@
 import { FunctionComponent, useEffect } from 'react'
 import useLocalStorageState from 'use-local-storage-state'
 
+
 import { Quantifier } from '../Quantifier'
-import { CartProps } from '../Products/Products.tsx'
-import { TotalPrice } from '../TotalPrice'
+import { CartProps } from '../Products/Items.tsx'
+import { Total } from '../Total'
 import { Operation } from '../Quantifier/Quantifier.tsx'
 import classes from './cart.module.scss'
 import { useLocation } from 'react-router-dom'
+
 
 
 export const Cart: FunctionComponent = () => {
@@ -29,7 +31,7 @@ export const Cart: FunctionComponent = () => {
     setCart((prevCart) => {
       const updatedCart = { ...prevCart }
       if (updatedCart[productId]) {
-        if (operation === 'increase') {
+        if (operation === 'add') {
           updatedCart[productId] = { ...updatedCart[productId], quantity: updatedCart[productId].quantity + 1 }
         } else {
           updatedCart[productId] = { ...updatedCart[productId], quantity: updatedCart[productId].quantity - 1 }
@@ -60,7 +62,7 @@ export const Cart: FunctionComponent = () => {
           </div>
         ))}
       </div>
-      <TotalPrice amount={totalPrice} />
+      <Total amount={totalPrice} />
     </section>
   )
 }

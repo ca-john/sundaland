@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sundaland-dev-160805-authRole",
+      "UnauthRoleArn": "arn:aws:iam::920142557828:role/amplify-sundaland-dev-160805-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::920142557828:role/amplify-sundaland-dev-160805-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-sundaland-dev-160805-deployment",
+      "UnauthRoleName": "amplify-sundaland-dev-160805-unauthRole",
+      "StackName": "amplify-sundaland-dev-160805",
+      "StackId": "arn:aws:cloudformation:us-east-1:920142557828:stack/amplify-sundaland-dev-160805/9cf723b0-3c70-11ee-a0aa-0a8602d323f7",
+      "AmplifyAppId": "d2bk7x0qxsulq0"
+    },
+    "categories": {
+      "auth": {
+        "sundalanddb355c0e": {}
+      }
+    }
+  }
+}

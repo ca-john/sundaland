@@ -1,0 +1,33 @@
+.cart {
+    padding: 0.75rem;
+    margin-top: 7.5rem;
+  
+    .container {
+      display: flex;
+      flex-direction: column;
+  
+      .product {
+        display: flex;
+        border-top: 1.5px dotted;
+        border-left: 1.5px dotted;
+        border-right: 1.5px dotted;
+        padding: .25rem .5rem;
+        align-items: center;
+  
+        h3 {
+          color: #a600ff;
+          font-weight: 800;
+          font-size: 2em;
+          line-height: 18px;
+          margin: .25rem;
+          flex: 1;
+        }
+  
+        img {
+          max-width: 3rem;
+          height: auto;
+          margin: .875rem;
+        }
+      }
+    }
+  }
