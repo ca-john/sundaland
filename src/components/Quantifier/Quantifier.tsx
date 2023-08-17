@@ -1,6 +1,6 @@
 import { FunctionComponent, useState } from 'react'
-
 import styles from './quantifier.module.scss'
+import React from 'react'
 
 export type Operation = 'reduce' | 'add'
 

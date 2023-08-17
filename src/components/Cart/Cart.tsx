@@ -8,6 +8,7 @@ import { Total } from '../Total'
 import { Operation } from '../Quantifier/Quantifier.tsx'
 import styles from './cart.module.scss'
 import { useLocation } from 'react-router-dom'
+import React from 'react'
 
 
 

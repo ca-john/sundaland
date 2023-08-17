@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import cart from '../../assets/cart.svg'
 import styles from './cart.module.scss'
+import React from 'react'
 
 interface Props {
   productsCount: number

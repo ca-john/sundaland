@@ -1,9 +1,8 @@
 import { useState , FunctionComponent} from 'react';
-// import { Auth } from 'aws-amplify'; // Import Auth from Amplify
 import { useAuth } from '../../AuthContext';
-
 import styles from './login.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
 
 
 export const Login: FunctionComponent = () => {
