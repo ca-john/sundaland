@@ -51,14 +51,4 @@ function App({ signOut }) {
   );
 }
 
-// PrivateRoute component for protected routes
-// const PrivateRoute: React.FC<{ path: string; element: JSX.Element }> = ({
-//   path,
-//   element,
-// }) => {
-//   const { user } = useAuth();
-
-//   return user ? <Route path={path} element={element} /> : null;
-// };
-
 export default App;

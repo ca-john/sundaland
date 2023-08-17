@@ -24,23 +24,27 @@
         }
   
         button {
-          background-color: #fbd815;
-          width: 13rem;
+          background-color: #646cffaa;
+          width: 12.5rem;
           padding: .5rem;
           font-size: 1.1em;
-          border-radius: 25px;
+          border-radius: 10px;
           border-color: #D5D9D9;
           border-style: solid;
           border-width: 1px;
   
           &:hover:not([disabled]) {
-            background-color: #eecf1d;
+            background-color: #646cffaa;
             cursor: pointer;
           }
   
           &:disabled {
             opacity: .5;
             background-color: lightgray;
+          }
+          &:hover {
+            filter: drop-shadow(0 0 1em #646cffaa);
+            
           }
         }
       }
@@ -57,6 +61,13 @@
         }
       }
     }
+
+    .description{
+      font-size: 0.75em;
+      padding: 1.5em;
+    }
+
+
   }
   
   .error {

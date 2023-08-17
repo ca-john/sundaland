@@ -1,11 +1,13 @@
 import { FunctionComponent, useEffect, useState } from 'react'
 import useLocalStorageState from 'use-local-storage-state'
 
-import styles from './products.module.scss'
+import styles from './items.module.scss'
 import { Loader } from '../Loader'
 
 const ENDPOINT = 'https://dummyjson.com/products'
 
+
+// This is the type of the data that we get from the API
 export type Product = {
   id: number
   title: string
@@ -13,7 +15,9 @@ export type Product = {
   thumbnail: string
   image: string
   quantity: number
+  description: string
 }
+
 
 export interface CartProps {
   [productId: string]: Product
@@ -60,7 +64,7 @@ export const Products: FunctionComponent = () => {
   const isInCart = (productId: number):boolean => Object.keys(cart || {}).includes(productId.toString())
 
   if (error) {
-    return <h3 className={styles.error}>An error occurred when fetching data. Please check the API and try again.</h3>
+    return <h3 className={styles.error}>There was an error, please try again.</h3>
   }
 
   if (isLoading) {
@@ -77,7 +81,8 @@ export const Products: FunctionComponent = () => {
           <div className={styles.product} key={product.id}>
             <img src={product.thumbnail} alt={product.title} />
             <h3>{product.title}</h3>
-            <p>Price: {product.price}</p>
+            <p>Price: ${product.price}</p>
+            <div className={styles.description}>{product.description}</div>
             <button disabled={isInCart(product.id)} onClick={() => addToCart(product)}>Add to Cart</button>
           </div>
         ))}
