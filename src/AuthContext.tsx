@@ -1,5 +1,5 @@
 // src/AuthContext.tsx
-import React, { FunctionComponent, ReactNode, createContext, useContext, useEffect, useState } from 'react';
+import { FunctionComponent, ReactNode, createContext, useContext, useEffect, useState } from 'react';
 import { Auth, Hub } from 'aws-amplify';
 
 interface AuthContextType {

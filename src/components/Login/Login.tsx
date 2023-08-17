@@ -1,9 +1,9 @@
-// src/components/Login.tsx
-import { React, useState , FunctionComponent} from 'react';
-import { Auth } from 'aws-amplify'; // Import Auth from Amplify
+import { useState , FunctionComponent} from 'react';
+// import { Auth } from 'aws-amplify'; // Import Auth from Amplify
 import { useAuth } from '../../AuthContext';
 
 import styles from './login.module.scss';
+import { Link } from 'react-router-dom';
 
 
 export const Login: FunctionComponent = () => {
@@ -47,6 +47,7 @@ export const Login: FunctionComponent = () => {
       <button className={styles.loginButton} onClick={handleLogin}>
         Login
       </button>
+      <p>Don't have an account? <Link to="/register" className={styles.backToRegister}>Register</Link></p> {/* Add link */}
     </div>
   );
 };

@@ -8,6 +8,8 @@ import { Header } from './components/Header';
 import { Products } from './components/Products';
 import { Cart } from './components/Cart';
 import { Login } from './components/Login';
+import { Register } from './components/Register'; // Import the Register component
+
 
 // Configure Amplify
 Amplify.configure(awsconfig);
@@ -22,7 +24,7 @@ function App() {
             <Route path="/" element={<Products />} />
             <Route path="/cart" element={<PrivateRoute path="/cart" element={<Cart />} />} />
             <Route path="/login" element={<Login />} />
-            {/* <Route exact path='/register' element={<Register/>}/> */}
+            <Route path="/register" element={<Register />} /> {/* Add the Register route */}
           </Routes>
         </main>
       </AuthProvider>
