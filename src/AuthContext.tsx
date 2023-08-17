@@ -1,5 +1,5 @@
 // src/AuthContext.tsx
-import React, { createContext, useContext, useEffect, useState, ReactNode} from 'react';
+import React, { FunctionComponent, ReactNode, createContext, useContext, useEffect, useState } from 'react';
 import { Auth, Hub } from 'aws-amplify';
 
 interface AuthContextType {
@@ -10,9 +10,14 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+interface Props {
+  children: ReactNode; // Define the children prop
+}
 
-export const AuthProvider: React.FC = ({ children }) => {
-  const [user, setUser] = useState<any>(null);
+
+export const AuthProvider: FunctionComponent<Props> = ({ children }) => {
+  
+  const [user, setUser] = useState(null);
 
   const signIn = async (username: string, password: string) => {
     try {

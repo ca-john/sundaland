@@ -1,33 +1,43 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+// src/App.tsx
 import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Amplify } from 'aws-amplify';
+import awsconfig from './aws-exports'; // Import your Amplify configuration
+import { AuthProvider, useAuth } from './AuthContext';
+import { Header } from './components/Header';
+import { Products } from './components/Products';
+import { Cart } from './components/Cart';
+import { Login } from './components/Login';
 
-import { Header } from './components/Header'
-import { Products } from './components/Products'
-import { Cart } from './components/Cart'
-import './app.module.scss'
-import { AuthProvider } from './AuthContext'; // Import the AuthProvider
-
+// Configure Amplify
+Amplify.configure(awsconfig);
 
 function App() {
-  
   return (
     <BrowserRouter>
-      <Header />
-      <main>
-        <Routes>
-          <Route
-            path="/"
-            element={<Products />}
-          />
-          <Route
-            path="/cart"
-            element={<Cart />}
-          />
-        </Routes>
-      </main>
-      
+      <AuthProvider>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Products />} />
+            <Route path="/cart" element={<PrivateRoute path="/cart" element={<Cart />} />} />
+            <Route path="/login" element={<Login />} />
+            {/* <Route exact path='/register' element={<Register/>}/> */}
+          </Routes>
+        </main>
+      </AuthProvider>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+// PrivateRoute component for protected routes
+const PrivateRoute: React.FC<{ path: string; element: JSX.Element }> = ({
+  path,
+  element,
+}) => {
+  const { user } = useAuth();
+
+  return user ? <Route path={path} element={element} /> : null;
+};
+
+export default App;
