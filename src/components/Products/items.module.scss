@@ -1,76 +1,73 @@
 .productPage {
-    padding: 1rem;
-    margin-top: 8rem;
-  
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-  
-      .product {
-        flex-basis: 33.33%;
-        margin-bottom: 5rem;
-        text-align: center;
-  
-        h3 {
-          color: #007185;
-          font-weight: 700;
-          line-height: 20px;
-          margin: 0;
-        }
-  
-        img {
-          height: 6rem;
-        }
-  
-        button {
+  padding: 1rem;
+  margin-top: 8rem;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .product {
+      flex-basis: 33.33%;
+      margin-bottom: 5rem;
+      text-align: center;
+
+      h3 {
+        color: #007185;
+        font-weight: 700;
+        line-height: 20px;
+        margin: 0;
+      }
+
+      img {
+        height: 6rem;
+      }
+
+      button {
+        background-color: #646cffaa;
+        width: 12.5rem;
+        padding: 0.5rem;
+        font-size: 1.1em;
+        border-radius: 10px;
+        border-color: #d5d9d9;
+        border-style: solid;
+        border-width: 1px;
+
+        &:hover:not([disabled]) {
           background-color: #646cffaa;
-          width: 12.5rem;
-          padding: .5rem;
-          font-size: 1.1em;
-          border-radius: 10px;
-          border-color: #D5D9D9;
-          border-style: solid;
-          border-width: 1px;
-  
-          &:hover:not([disabled]) {
-            background-color: #646cffaa;
-            cursor: pointer;
-          }
-  
-          &:disabled {
-            opacity: .5;
-            background-color: lightgray;
-          }
-          &:hover {
-            filter: drop-shadow(0 0 1em #646cffaa);
-            
-          }
+          cursor: pointer;
         }
-      }
-  
-      @media (max-width: 767px) {
-        .product {
-          flex-basis: 50%;
+
+        &:disabled {
+          opacity: 0.5;
+          background-color: lightgray;
         }
-      }
-  
-      @media (max-width: 400px) {
-        .product {
-          flex-basis: 100%;
+        &:hover {
+          filter: drop-shadow(0 0 1em #646cffaa);
         }
       }
     }
 
-    .description{
-      font-size: 0.75em;
-      padding: 1.5em;
+    @media (max-width: 767px) {
+      .product {
+        flex-basis: 50%;
+      }
     }
 
+    @media (max-width: 400px) {
+      .product {
+        flex-basis: 100%;
+      }
+    }
+  }
 
+  .description {
+    font-size: 0.75em;
+    padding: 1.5em;
   }
-  
-  .error {
-    color: red;
-    text-align: center;
-  }
+}
+
+.error {
+  color: red;
+  text-align: center;
+}

@@ -1,7 +1,7 @@
 {
   "name": "sundaland",
   "private": false,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Momin Naseem",
   "type": "module",
   "scripts": {
@@ -16,6 +16,7 @@
     "@aws-amplify/auth": "^5.6.1",
     "@aws-amplify/ui-react": "^5.1.1",
     "aws-amplify": "^5.3.7",
+    "http-server": "^14.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0"

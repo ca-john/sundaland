@@ -20,7 +20,7 @@ export const Register: FunctionComponent = () => {
     }
     
     try {
-      u = await Auth.signUp({
+      await Auth.signUp({
         username,
         password,
         attributes: {
