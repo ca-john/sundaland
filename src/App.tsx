@@ -22,7 +22,8 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Products />} />
-            <Route path="/cart" element={<PrivateRoute path="/cart" element={<Cart />} />} />
+            {/* <Route path="/cart" element={<PrivateRoute path="/cart" element={<Cart />} />} /> */}
+            <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} /> {/* Add the Register route */}
           </Routes>
@@ -33,13 +34,13 @@ function App() {
 }
 
 // PrivateRoute component for protected routes
-const PrivateRoute: React.FC<{ path: string; element: JSX.Element }> = ({
-  path,
-  element,
-}) => {
-  const { user } = useAuth();
+// const PrivateRoute: React.FC<{ path: string; element: JSX.Element }> = ({
+//   path,
+//   element,
+// }) => {
+//   const { user } = useAuth();
 
-  return user ? <Route path={path} element={element} /> : null;
-};
+//   return user ? <Route path={path} element={element} /> : null;
+// };
 
 export default App;

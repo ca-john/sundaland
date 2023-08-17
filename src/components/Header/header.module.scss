@@ -1,5 +1,5 @@
 .header {
-  
+    height: 115px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -13,17 +13,50 @@
     backdrop-filter: saturate(150%) blur(15px);
     justify-content: space-between;
     z-index: 1;
-  
-    .logo {
+    :hover {
+      filter: drop-shadow(0 0 1em #646cffaa);
+    }
+
+
+    .logos{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
       
-      height:5em;
-      padding: 1em;
+
+    }
+
+
+    .logo {
+      height: 20%;
+      width: 20%;
+      padding: 2.5em;
       will-change: filter;
       transition: filter 250ms;
-      transform: scaleX(-1);
 
       &:hover {
         filter: drop-shadow(0 0 1em #646cffaa);
       }
+      
     }
+
+
+    .loginLogo {
+      height: 15%;
+      width: 15%;
+      padding: 0em;
+      will-change: filter;
+      transition: filter 250ms;
+      position: relative;
+      right: -80%;
+      top: 0%;
+
+      &:hover {
+        filter: drop-shadow(0 0 1em #646cffaa);
+      }
+      
+    }
+
+
   }

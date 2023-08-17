@@ -1,6 +1,6 @@
 import { FunctionComponent, useState } from 'react'
 
-import classes from './quantifier.module.scss'
+import styles from './quantifier.module.scss'
 
 export type Operation = 'reduce' | 'add'
 
@@ -32,15 +32,15 @@ export const Quantifier: FunctionComponent<Props> = ({ removeProductCallback, ha
   }
 
   return (
-    <div className={classes.quantifier}>
-      <input type="button" value="-" className={classes.buttonMinus} onClick={reduce} />
+    <div className={styles.quantifier}>
+      <input type="button" value="-" className={styles.buttonMinus} onClick={reduce} />
       <input type="number"
              step="1"
              max=""
              value={value}
              onChange={e => setValue(parseInt(e.target.value))}
-             className={classes.quantityField} />
-      <input type="button" value="+" className={classes.buttonPlus} onClick={increase} />
+             className={styles.quantityField} />
+      <input type="button" value="+" className={styles.buttonPlus} onClick={increase} />
     </div>
   )
 }

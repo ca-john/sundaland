@@ -6,7 +6,7 @@ import { Quantifier } from '../Quantifier'
 import { CartProps } from '../Products/Items.tsx'
 import { Total } from '../Total'
 import { Operation } from '../Quantifier/Quantifier.tsx'
-import classes from './cart.module.scss'
+import styles from './cart.module.scss'
 import { useLocation } from 'react-router-dom'
 
 
@@ -27,7 +27,7 @@ export const Cart: FunctionComponent = () => {
     })
   }
 
-  const handleUpdateQuantity = (productId: number, operation: Operation) => {
+  const handleUpdate = (productId: number, operation: Operation) => {
     setCart((prevCart) => {
       const updatedCart = { ...prevCart }
       if (updatedCart[productId]) {
@@ -47,18 +47,18 @@ export const Cart: FunctionComponent = () => {
   const totalPrice = getProducts().reduce((accumulator, product) => accumulator + (product.price * product.quantity), 0)
 
   return (
-    <section className={classes.cart}>
+    <section className={styles.cart}>
       <h1>Cart</h1>
 
-      <div className={classes.container}>
+      <div className={styles.container}>
         {getProducts().map(product => (
-          <div className={classes.product} key={product.id}>
+          <div className={styles.product} key={product.id}>
             <img src={product.thumbnail} alt={product.title} />
             <h3>{product.title}</h3>
             <Quantifier
               removeProductCallback={() => handleRemoveProduct(product.id)}
               productId={product.id}
-              handleUpdateQuantity={handleUpdateQuantity} />
+              handleUpdateQuantity={handleUpdate} />
           </div>
         ))}
       </div>
