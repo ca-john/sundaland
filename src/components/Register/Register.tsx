@@ -18,9 +18,9 @@ export const Register: FunctionComponent = () => {
       setRegistrationError("Passwords don't match");
       return;
     }
-
+    
     try {
-      await Auth.signUp({
+      u = await Auth.signUp({
         username,
         password,
         attributes: {
@@ -39,7 +39,9 @@ export const Register: FunctionComponent = () => {
   return (
     <div className={styles.registerContainer}>
       <h2>Register</h2>
-      {registrationError && <p className="error-message">{registrationError}</p>} {/* Display error message */}
+      {registrationError && <p className="errorMessage">{registrationError}</p>} {registrationError}
+      {!registrationError && <p>{registrationError}</p>} {"Successfully registered"}
+
       <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
           <label>Username</label>

@@ -28,6 +28,7 @@ function App() {
             <Route path="/register" element={<Register />} /> {/* Add the Register route */}
           </Routes>
         </main>
+        
       </AuthProvider>
     </BrowserRouter>
   );

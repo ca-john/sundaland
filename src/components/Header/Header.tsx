@@ -7,10 +7,14 @@ import loginLogo from '/login.svg'
 import { CartWidget } from '../CartWidget'
 import { CartProps } from '../Products/Items.tsx'
 import useLocalStorageState from 'use-local-storage-state'
+import { useAuth } from '../../AuthContext.tsx'
 
 
 
 export const Header: FunctionComponent = () => {
+
+
+
     // We need to shrink the header when the user scrolls down, 
     // so we need to add an event listener to the window object
     useEffect(() => {
@@ -26,7 +30,6 @@ export const Header: FunctionComponent = () => {
       const headerElement = document.querySelector("header") as HTMLElement
       const logoElement = document.querySelectorAll("img")[0] as HTMLElement
       const cartWidgetElement = document.querySelectorAll("img")[1] as HTMLElement
-      const accountElement = document.querySelectorAll("img")[3] as HTMLElement
       const productsCountElement = document.querySelector("span") as HTMLElement
       const scrollY = document.body.scrollTop || document.documentElement.scrollTop
   
@@ -56,6 +59,7 @@ export const Header: FunctionComponent = () => {
     return (
       <header className={styles.header}>
         <div>
+         
           <Link to="/">
             <img src={logo} className={styles.logo} alt="Shopping Cart Application" />
           </Link>
@@ -66,7 +70,6 @@ export const Header: FunctionComponent = () => {
           </Link>
           <CartWidget productsCount={productsCount} />
         </div>
-        
       </header>
     )
   }

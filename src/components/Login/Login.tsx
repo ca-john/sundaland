@@ -3,7 +3,7 @@ import { useState , FunctionComponent} from 'react';
 import { useAuth } from '../../AuthContext';
 
 import styles from './login.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export const Login: FunctionComponent = () => {
@@ -11,14 +11,22 @@ export const Login: FunctionComponent = () => {
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState<string | null>(null); // Add state for login error
   const { signIn } = useAuth();
+  const navigate = useNavigate(); // Get the history object
+
 
   const handleLogin = async () => {
+    let u = null;
     try {
-      await signIn(username, password);
-    } catch (error) {
-      alert('Invalid username or password');
-      setLoginError('Invalid username or password'); // Set error message
+      u = await signIn(username, password);
+      navigate('/'); // Redirect to home page
+      
     }
+    catch (error: any) {
+      if (!u) {
+        setLoginError('Invalid username or password');
+      }
+   }
+
   };
 
   return (
